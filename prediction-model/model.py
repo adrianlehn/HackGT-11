@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
@@ -49,6 +50,11 @@ def evaluate_model(model, X_test, y_test):
     print('\nClassification Report:')
     print(classification_report(y_test, y_pred))
 
+def save_model(model, scaler, mod_path, sca_path):
+    joblib.dump(model,mod_path)
+    joblib.dump(scaler,sca_path)
+    print("Model and scaler saved.")
+
 if __name__ == "__main__":
 
     filepath = './input/hospital_readmissions.csv'
@@ -62,6 +68,8 @@ if __name__ == "__main__":
     ml_model = train_logistic_regression(X_train, y_train)
 
     evaluate_model(ml_model,X_test,y_test)
+
+    save_model(ml_model, scaler,'prediction-model/logistic_regression_model.pkl', 'prediction-model/scaler.pkl')
 
 
 
