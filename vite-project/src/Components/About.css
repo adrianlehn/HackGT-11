@@ -41,12 +41,20 @@
   }
   
   .about-image:hover {
-    transform: scale(1.2);
+    transform: scale(1.5);
   }
   
   .about-creator {
     position: absolute;
     bottom: 20px;
+    left: 20px;
+    font-size: 1em;
+    color: #999;
+  }
+
+  .about-link {
+    position: absolute;
+    bottom: 0px;
     left: 20px;
     font-size: 1em;
     color: #999;

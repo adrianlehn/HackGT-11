@@ -7,8 +7,12 @@ function AboutPage() {
       <div className="about-text">
         <h1>About Our Project</h1>
         <p>
-          This project is designed to be interactive and visually appealing. We 
-          focus on modern web technologies and creative design solutions.
+          This project is our submission to HackGT11 with a focus on the AI Funhouse track.
+          We've developed a machine learning model trained on a kaggle dataset based on
+          patient readmissions. Our goal was to implement a logistic regression to predict
+          whether or not a patient is at risk of being readmitted into the hospital within
+          30 days. The model has a modest accuracy of 60.25% after following a 70/30 training
+          and testing split.
         </p>
       </div>
 
@@ -18,7 +22,11 @@ function AboutPage() {
       </div>
 
       <div className="about-creator">
-        <p>Created by: Adrian L & Matthew S</p>
+        <p>Created by: Adrian Lehnhaeuser & Matthew Segura</p>
+      </div>
+
+      <div className="about-link">
+        <p>LinkedIn: adrianlehn & matthewsegura</p>
       </div>
     </div>
   );
