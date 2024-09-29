@@ -46,10 +46,10 @@
   
   .about-creator {
     position: absolute;
-    bottom: 20px;
+    bottom: 22px;
     left: 20px;
     font-size: 1em;
-    color: #999;
+    color: #3f3e3e;
   }
 
   .about-link {
@@ -57,7 +57,7 @@
     bottom: 0px;
     left: 20px;
     font-size: 1em;
-    color: #999;
+    color: #3f3e3e;
   }
   
   

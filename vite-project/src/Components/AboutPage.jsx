@@ -9,7 +9,8 @@ function AboutPage() {
         <p>
           This project is our submission to HackGT11 with a focus on the AI Funhouse track.
           We've developed a machine learning model trained on a kaggle dataset based on
-          patient readmissions. Our goal was to implement a logistic regression to predict
+          patient readmissions. This dataset included relevant patient data including age, number of 
+          days visited, number of procedures done, etc. Our goal was to implement a logistic regression to predict
           whether or not a patient is at risk of being readmitted into the hospital within
           30 days. The model has a modest accuracy of 60.25% after following a 70/30 training
           and testing split.
