@@ -2,13 +2,17 @@
 import '../App.css';
 import { Button } from './Button';
 import './HeroSection.css';
+import image1 from 'vite-project/src/assets/damn-removebg-preview.png'; 
+import image2 from 'vite-project/src/assets/bruh-removebg-preview.png'; 
+import image3 from 'vite-project/src/assets/bruh2-removebg-preview.png'; 
 
 function HeroSection() {
   return (
     <div className='hero-container'>
-      <video src='/src/assets/video-2.mp4' autoPlay loop muted />
-      <h1>ADVENTURE AWAITS</h1>
-      <p>What are you waiting for?</p>
+      
+      <h1>REMA : The Future of Healthcare</h1>
+      <p>Machine Learning tool that predicts hospital re-admission</p>
+      <p>What are you waiting for? </p>
       <div className='hero-btns'>
         <Button
           className='btns'
@@ -17,14 +21,13 @@ function HeroSection() {
         >
           GET STARTED
         </Button>
-        <Button
-          className='btns'
-          buttonStyle='btn--primary'
-          buttonSize='btn--large'
-          onClick={console.log('hey')}
-        >
-          WATCH TRAILER <i className='far fa-play-circle' />
-        </Button>
+        
+      </div>
+      <div className="hero-images">
+        <img src={image3} alt="Image 1" className="about-image" />
+        <img src={image1} alt="Image 1" className="about-image" />
+        <img src={image2} alt="Image 1" className="about-image" />
+        
       </div>
     </div>
   );
