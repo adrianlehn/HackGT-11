@@ -22,6 +22,9 @@ function Tool() {
     readmitted: ''
   });
 
+  const [prediction, setPrediction] = useState(null);
+  const [predictionColor, setPredictionColor] = useState('');
+  const [message, setMessage] = useState('');
   
 
   const handleChange = (e) => {
@@ -30,12 +33,44 @@ function Tool() {
       [e.target.name]: e.target.value
     });
   };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      
+      const response = await fetch('http://localhost:5000/predict', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),  
+      });
+
+      
+      const result = await response.json();
+      const probability = result.prediction;
+      setPrediction(probability);
+
+      if (probability <= 0.4) {
+        setPredictionColor('green');
+        setMessage('Low risk of readmission.');
+      } else if (probability <= 0.7) {
+        setPredictionColor('yellow');
+        setMessage('Moderate risk of readmission.');
+      } else {
+        setPredictionColor('red');
+        setMessage('High risk of readmission.');
+      }
+    } catch (error) {
+      console.error('Error submitting the form:', error);
+    }
+  };
 
   
 
   return (
     <div className="tool-container">
-      <form className="survey-form" >
+      <form className="survey-form" onSubmit={handleSubmit}>
         <h1>Patient Readmission Risk Survey</h1>
 
         {/* Age Bracket */}
@@ -70,19 +105,7 @@ function Tool() {
           />
         </div>
 
-        {/* Number of Procedures */}
-        <div className="form-group">
-          <label htmlFor="n_procedures">Number of Procedures
-            <span className="fa-solid fa-circle-info" title="Number of procedures performed during the hospital stay"></span>
-          </label>
-          <input 
-            type="number" 
-            name="n_procedures" 
-            id="n_procedures" 
-            onChange={handleChange} 
-            required 
-          />
-        </div>
+        
 
         {/* Number of Lab Procedures */}
         <div className="form-group">
@@ -268,20 +291,20 @@ function Tool() {
           </select>
         </div>
 
-        {/* Readmitted */}
-        <div className="form-group">
-          <label htmlFor="readmitted">Readmitted to Hospital
-            <span className="fa-solid fa-circle-info" title="Whether the patient was readmitted to the hospital ('yes' or 'no')"></span>
-          </label>
-          <select name="readmitted" id="readmitted" onChange={handleChange} required>
-            <option value="">Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </div>
+       
 
         <button type="submit">Submit</button>
       </form>
+      {prediction !== null && (
+      <div className="prediction-result">
+        <div 
+          className="prediction-block" 
+          style={{ backgroundColor: predictionColor, width: '100px', height: '100px', margin: '20px auto' }}
+        ></div>
+        <p>{message}</p>
+      </div>
+    )}
+  
     </div>
   );
 }
