@@ -19,7 +19,6 @@ function Tool() {
     A1Ctest: '',
     change: '',
     diabetes_med: '',
-    readmitted: ''
   });
 
   const [prediction, setPrediction] = useState(null);
@@ -104,7 +103,20 @@ function Tool() {
             required 
           />
         </div>
-
+        
+        {/* Number of Procedures */}
+        <div className="form-group">
+          <label htmlFor="n_procedures">Number of Procedures
+            <span className="fa-solid fa-circle-info" title="Number of procedures performed during the hospital stay"></span>
+          </label>
+          <input 
+            type="number" 
+            name="n_procedures" 
+            id="n_procedures" 
+            onChange={handleChange} 
+            required 
+          />
+        </div>
         
 
         {/* Number of Lab Procedures */}

@@ -29,9 +29,14 @@ def preprocess_user(user_data, scaler, feature_names):
 def predict():
     user_data = request.json
     print(user_data)
+    numeric_fields = ['time_in_hospital', 'n_procedures', 'n_lab_procedures', 'n_medications', 'n_outpatient', 'n_inpatient', 'n_emergency']
+    for field in numeric_fields:
+        if field in user_data:
+            user_data[field] = int(user_data[field])
     preprocessed_input = preprocess_user(user_data, scaler, feature_names)
+    print("Preprocessed Input (from Flask):", preprocessed_input)
     probability = log_reg_model.predict_proba(preprocessed_input)[:,1][0]
-    print(probability)
+    print("Probability (from Flask):", probability)
     return jsonify({'prediction': probability})
 
 if __name__ == '__main__':

@@ -32,34 +32,34 @@ if __name__ == "__main__":
     log_reg_model, scaler, feature_names = load_model('prediction-model/logistic_regression_model.pkl', 'prediction-model/scaler.pkl', 'prediction-model/feature_names.pkl')
 
     user_input_data = {
-        'age': '[40-50)',
-        'time_in_hospital': 2,
-        'n_lab_procedures': 51,
-        'n_procedures': 0,
-        'n_medications': 10,
-        'n_outpatient': 0,
-        'n_inpatient': 0,
-        'n_emergency': 0,
-        'medical_specialty': 'Missing',
+        'age': '[90-100)',
+        'time_in_hospital': 13,
+        'n_lab_procedures': 20,
+        'n_procedures': 20,
+        'n_medications': 20,
+        'n_outpatient': 20,
+        'n_inpatient': 20,
+        'n_emergency': 20,
+        'medical_specialty': 'Emergency/Trauma',
         'diag_1': 'Other',
-        'diag_2': 'Other',
+        'diag_2': 'Diabetes',
         'diag_3': 'Other',
         'glucose_test': 'high',
-        'A1Ctest': 'high',
+        'A1Ctest': 'normal',
         'change': 'yes',
         'diabetes_med': 'yes',
     }
 
-    for key in user_input_data.keys():
-        if key in ['time_in_hospital','n_lab_procedures','n_procedures','n_medications','n_outpatient','n_inpatient','n_emergency']:
-            user_input_data[key] = int(input(f"Enter value for {key} (numeric): "))
-        else:
-            user_input_data[key] = input(f"Enter value for {key} (text): ")
+    # for key in user_input_data.keys():
+    #     if key in ['time_in_hospital','n_lab_procedures','n_procedures','n_medications','n_outpatient','n_inpatient','n_emergency']:
+    #         user_input_data[key] = int(input(f"Enter value for {key} (numeric): "))
+    #     else:
+    #         user_input_data[key] = input(f"Enter value for {key} (text): ")
 
 
     preprocessed_input = preprocess_user(user_input_data, scaler, feature_names)
+    print("Preprocessed Input (from Script):", preprocessed_input)
     probability = predict_readmission(log_reg_model, preprocessed_input)[0]
-    print('Predicted readmission within 30 days:')
-    print(probability)
+    print("Probability (from Script):", probability)
     
     
