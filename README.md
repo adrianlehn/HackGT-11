@@ -1,6 +1,6 @@
 # AI Funhouse - HackGT-11
 
-This project involves using a machine learning model to analyze hospital patient data and identify trends in to predict readmissions.
+This project involves using a machine learning model to analyze hospital patient data and identify trends in order to predict readmissions.
 
 ## Setup Instructions
 
