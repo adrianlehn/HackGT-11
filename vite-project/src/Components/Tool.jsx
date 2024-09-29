@@ -1,6 +1,10 @@
-
+import './Tool.css'
 function Tool() {
-  return <h1>Tool Page</h1>;
+  return(
+    <div className="tool-container">
+      <div className="tool-text"></div>
+    </div>
+  );
 }
 
 export default Tool;
