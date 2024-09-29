@@ -26,6 +26,7 @@ def preprocess_user(user_data, scaler, feature_names):
 @app.route('/predict', methods=['POST'])
 def predict():
     user_data = request.json
+    print(user_data)
     preprocessed_input = preprocess_user(user_data, scaler, feature_names)
     probability = log_reg_model.predict_proba(preprocessed_input)[:,1][0]
 
