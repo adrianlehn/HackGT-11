@@ -22,6 +22,9 @@ venv\Scripts\activate
 
 pip install -r requirements.txt
 ```
+### Step 2: Install npm react-router-dom and ensure react/node.js is installed on machine
+Use the following command: npm install react-router-dom in vite-project integrated terminal
+
 ## CSV File Format (dataset found on kaggle)
 Link: https://www.kaggle.com/datasets/dubradave/hospital-readmissions
 
