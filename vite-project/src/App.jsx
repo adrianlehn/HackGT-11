@@ -3,6 +3,7 @@ import './App.css';
 
 import Navbar from './Components/NavBar';
 import AboutPage from './Components/AboutPage';
+import HomePage from './Components/HomePage';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path='/' element={<h1>Home Page</h1>} exact />
+          <Route path='/' exact Component={HomePage} />
           {/* Route for the About Page */}
           <Route path='/about' element={<AboutPage />} />
         </Routes>
