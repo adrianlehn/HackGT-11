@@ -11,7 +11,7 @@ function HeroSection() {
     <div className='hero-container'>
       
       <h1>REMA : The Future of Healthcare</h1>
-      <p>Machine Learning tool that predicts hospital re-admission</p>
+      <p>Machine Learning tool that predicts hospital readmission</p>
       <p>What are you waiting for? </p>
       <div className='hero-btns'>
         <Button
