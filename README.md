@@ -5,7 +5,7 @@ This project involves using a machine learning model to analyze hospital patient
 ## Setup Instructions
 
 ### Step 1: Create a Virtual Environment
-Use the following command to create a virtual environment:
+Use the following command to create a virtual environment, and then download the dependencies:
 
 ```bash
 # For Python 2.x
