@@ -1,0 +1,55 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    background-color: #f0f0f0;
+  }
+  
+  .about-text {
+    margin-bottom: 20px;
+  }
+  
+  .about-text h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .about-text p {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .about-images {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 20px;
+  }
+  
+  .about-image {
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .about-image:hover {
+    transform: scale(1.2);
+  }
+  
+  .about-creator {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 1em;
+    color: #999;
+  }
+  
+  
