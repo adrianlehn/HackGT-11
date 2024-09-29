@@ -4,9 +4,9 @@ import pandas as pd
 
 app = Flask(__name__)
 
-log_reg_model, scaler, feature_names = joblib.load('prediction-model/logistic_regression_model.pkl'), \
-                                       joblib.load('prediction-model/scaler.pkl'), \
-                                       joblib.load('prediction-model/feature_names.pkl')
+log_reg_model, scaler, feature_names = joblib.load('logistic_regression_model.pkl'), \
+                                       joblib.load('scaler.pkl'), \
+                                       joblib.load('feature_names.pkl')
 
 def preprocess_user(user_data, scaler, feature_names):
     df = pd.DataFrame([user_data])
@@ -33,4 +33,4 @@ def predict():
     return jsonify({'prediction': probability})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
