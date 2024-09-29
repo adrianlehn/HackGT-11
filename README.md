@@ -48,7 +48,7 @@ Link: https://www.kaggle.com/datasets/dubradave/hospital-readmissions
 
 ### Patient Data Attributes and Types:
 
-- **age**: [40-50), [50-60), [60-70), [70-80), [80-90)
+- **age**: [40-50), [50-60), [60-70), [70-80), [80-90), [90, 100)
 - **time_in_hospital**: integer
 - **n_procedures**: integer
 - **n_lab_procedures**: integer
