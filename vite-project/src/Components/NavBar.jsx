@@ -18,7 +18,7 @@ function NavBar() {
               REMA <i className="fa-solid fa-virus"/>
             </Link>
             <div className="menu-icon" onClick={handleClick}>
-              <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>
+              <i className={click ? 'fa-solid fa-times' : 'fa-solid fa-bars'}/>
             </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
