@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 log_reg_model, scaler, feature_names = joblib.load('logistic_regression_model.pkl'), \
                                        joblib.load('scaler.pkl'), \
@@ -29,7 +31,7 @@ def predict():
     print(user_data)
     preprocessed_input = preprocess_user(user_data, scaler, feature_names)
     probability = log_reg_model.predict_proba(preprocessed_input)[:,1][0]
-
+    print(probability)
     return jsonify({'prediction': probability})
 
 if __name__ == '__main__':
