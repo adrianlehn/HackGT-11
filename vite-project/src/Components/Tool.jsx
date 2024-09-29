@@ -24,6 +24,7 @@ function Tool() {
   const [prediction, setPrediction] = useState(null);
   const [predictionColor, setPredictionColor] = useState('');
   const [message, setMessage] = useState('');
+  const [percentage, setPercentage] = useState('');
   
 
   const handleChange = (e) => {
@@ -50,6 +51,9 @@ function Tool() {
       const probability = result.prediction;
       setPrediction(probability);
 
+      const percentage = (probability * 100).toFixed(2);
+      setPercentage(percentage);
+
       if (probability <= 0.4) {
         setPredictionColor('green');
         setMessage('Low risk of readmission.');
@@ -70,7 +74,7 @@ function Tool() {
   return (
     <div className="tool-container">
       <form className="survey-form" onSubmit={handleSubmit}>
-        <h1>Patient Readmission Risk Survey</h1>
+        <h1 className='tool-container'>Patient Readmission Risk Survey</h1>
 
         {/* Age Bracket */}
         <div className="form-group">
@@ -309,16 +313,16 @@ function Tool() {
       </form>
       {prediction !== null && (
       <div className="prediction-result">
-        <div 
-          className="prediction-block" 
-          style={{ backgroundColor: predictionColor, width: '100px', height: '100px', margin: '20px auto' }}
-        ></div>
-        <p>{message}</p>
-      </div>
-    )}
-  
+      <div 
+        className="prediction-block" 
+        style={{ backgroundColor: predictionColor, width: '100px', height: '100px', margin: '20px auto' }}
+      ></div>
+      <p>{message}</p>
+      <p>Predicted Probability: {percentage}%</p> {/* Display the probability percentage */}
     </div>
-  );
+  )}
+</div>
+);
 }
 
 export default Tool;
