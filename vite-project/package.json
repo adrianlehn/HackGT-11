@@ -2,7 +2,7 @@
   "name": "vite-project",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://adrianlehn.github.io/HackGT-11-Mamas-Boys",
+  "homepage": "https://futurehealth.co",
   "type": "module",
   "scripts": {
     "dev": "vite",
