@@ -21,6 +21,9 @@ def preprocess(data):
     print('Data successfully preprocessed\n')
     print(data.columns)
 
+    feature_names = data.drop(columns=['readmitted']).columns
+    joblib.dump(feature_names, 'prediction-model/feature_names.pkl')
+
     return data
 
 def prep_traintest(data):
