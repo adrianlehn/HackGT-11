@@ -1,41 +1,104 @@
-  .hero-container > h1 {
-    color: #050404;
-    font-size: 40px;
-    margin-top: 100px;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-  button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 20px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; 
+}
+
+.tool-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw; 
+  background-color: #333;
+  overflow: hidden; 
+}
+
+.survey-form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%; 
+  max-width: 800px; 
+  height: 70vh; 
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  margin: -10px;
+  gap: 20px;
+}
+
+.survey-form h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
 }
 
 button:hover {
-    background-color: #0056b3;
+  background-color: #555;
 }
 
-/* Prediction output at the bottom */
 .prediction-result {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+  margin-top: 20px;
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .prediction-block {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 10px;
-    border: 2px solid #333;
-    border-radius: 8px;
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease-in-out;
 }
 
-  
+.prediction-result p {
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+.tool-container.active {
+  transform: translateY(-20px); 
+  transition: transform 0.3s ease-in-out;
+}
