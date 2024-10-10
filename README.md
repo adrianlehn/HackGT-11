@@ -62,3 +62,13 @@ Link: https://www.kaggle.com/datasets/dubradave/hospital-readmissions
 - **A1Ctest**: high, normal, no
 - **change**: yes, no
 - **diabetes_med**: yes, no
+
+### Running Application
+In order to run the local web application, run the following commands in their respective terminals.
+```bash
+# In the prediction-model integrated terminal
+python app.py
+
+# In the vite-project integrated terminal
+npm run dev
+```
